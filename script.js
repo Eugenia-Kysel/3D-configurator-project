@@ -2,7 +2,9 @@ const viewer = document.getElementById('viewer');
 const gearTypeSelect = document.getElementById('gearType');
 const optionsContainer = document.getElementById('optionsContainer');
 
-/* Gear options configuration */
+
+/* Gear options library configuration */
+
 const gearOptions = {
     worm: {
         name: "Ślimakowa",
@@ -19,11 +21,81 @@ const gearOptions = {
     bevel: {
         name: "Walcowo-Stożkowa",
         options: {
-            IEC: {
-                label: "IEC",
+            model: {
+                label: "Model",
                 choices: {
-                    iec90: "",
-                    iec112: ""
+
+                    dmkab60: {
+                        label: "DMKAB60",
+                        options: {
+                            iec: {
+                                label: "IEC",
+                                choices: {
+                                    "63B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/DMKAB60%2063B5.glb",
+                                    "71B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/DMKAB60%2071B5.glb",
+                                    "80B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/DMKAB60%2080B5.glb",
+                                    "90B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/DMKAB60%2090B5.glb",
+                                    "100B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/DMKAB60%20100B5.glb",
+                                    "112B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/DMKAB60%20112B5.glb",
+                                    "132B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/DMKAB60%20132B5.glb"
+                                }
+                            }
+                        }
+                    },
+
+                    dmkab70: {
+                        label: "DMKAB70",
+                        options: {
+                            iec: {
+                                label: "IEC",
+                                choices: {
+                                    "80B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/DMKAB70%20IEC80B5.glb",
+                                    "ZK76-71B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/ZK76-71B5.glb",
+                                    "ZKK76-90B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/ZK76-90B5.glb",
+                                    "ZK76-100B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/ZK76-100B5.glb",
+                                    "ZK76-132B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/ZK76-132B5.glb",
+                                    "ZK76-160B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/ZK76-160B5.glb"
+                                }
+                            }
+                        }
+                    },
+
+                    dmkab80: {
+                        label: "DMKAB80",
+                        options: {
+                            iec: {
+                                label: "IEC",
+                                choices: {
+                                    "80B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/DMKAB80%20IEC%2080B5.glb",
+                                    "90B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/DMKABB80%20IE%2090B5.glb",
+                                    "100B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/DMK90%20IEC100B5.glb",
+                                    "112B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/DMKAB80%20IEC%20112B5.glb",
+                                    "132B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/DMKAB80%20IEC%20132B5.glb",
+                                    "ZK86-100B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/ZK86-100B5.glb",
+                                    "ZK86-112B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/ZK86-112B5.glb",
+                                    "ZK86-132B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/ZK86-132B5.glb",
+                                    "ZK86-160B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/ZK86-160B5.glb",
+                                    "ZK86-180B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/ZK86-180B5.glb",
+                                }
+                            }
+                        }
+                    },
+
+                    dmkab90: {
+                        label: "DMKAB90",
+                        options: {
+                            iec: {
+                                label: "IEC",
+                                choices: {
+                                    "100B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/DMK90%20IEC100B5.glb",
+                                    "MKA97-112B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/MKA97-112B5.glb",
+                                    "MKA97-132B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/MKA97-132B5.glb",
+                                    "MKA97-180B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/MKA97-180B5.glb",
+                                    "MKA97-200B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/MKA97-200B5.glb",
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -34,8 +106,8 @@ const gearOptions = {
 // Inicjalizacja selecta głównego
 
 function initGearTypes() {
-    gearTypeSelect.innerHTML = '<option value="" disabled selected>Wybierz typ przekładni</option>';
-    for (let key in models) {
+    gearTypeSelect.innerHTML = "<option value=''> Wybierz typ przekładni </option>";
+    for (let key in gearOptions) {
         let opt = document.createElement('option');
         opt.value = key;
         opt.textContent = models[key].name;
