@@ -1,0 +1,40 @@
+:root {
+    --brand-primary:#9bfb1b;
+    --brand-secondary:#040404; /*black*/
+    --brand-tertiary:#ffffff; /*white*/
+
+    /*colour palette*/
+    --electric-violet: #8235fa;
+    --olive-drab: #5d9823;
+    --manatee: #8a8c9e;
+    --olivine: #90b272;
+    --conifer: #95d449;
+    --lima: #78c51f;
+    --fern-frond: #447c21;
+    --lima: #6bbc1c;
+
+    --royal-heath: #94248c;
+    --cod-black: #141414;
+    --cod-blac-kwarm: #0c0c0c;
+    --plum: #942c94;
+    --sambuca: #301c0c;
+    --seaweed: #0c200c;
+    --cod-gray: #100c0c;
+
+    /* Typography */
+    --font-family: "Raleway", sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(180deg, var(--brand-primary), var(--brand-secondary));
+    color: var(--brand-tertiary);
+    font-family: var(--font-family);
+}
+
+header {
+    text-align: center;
+    padding: 15px;
+    background: var(--brand-secondary);
+}
