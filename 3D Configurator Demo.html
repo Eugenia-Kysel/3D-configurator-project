@@ -13,13 +13,36 @@
         <h1>3D Configurator Demo</h1>
     </header>-->
     <main>
+
         <!-- MENU -->
-        <div class="menu-container">
-            <div class="menu">
-                <label for="gearType"></label>
-                <select id="gearType"></select>
+        <div class="menu-container"> <!-- wrapper na menu -->
+
+            <!-- Step 1: wybór typu przekładni -->
+            <div class="menu" id="menu-type">
+                <label for="gearType">>Wybierz typ przekładni:</label>
+                <select id="gearType" onchange="updateOptions()">
+                    <option value="">Wybierz</option>
+                    <option value="worm">Ślimakowa</option>
+                    <option value="bevel">Walcowo-Stożkowa</option>
                 </select>
             </div>
+
+            
+            <!-- Step 2: wybór modelu (tylko dla walcowo-stożkowych) -->
+            <div class="menu" id="menu-model" style="display: none;">
+                <label for="modelSelect">Wybierz model:</label>
+                <select id="modelSelect" onchange="updateFlangeOptions()">
+                    <!-- JS wypełni opcje: DMKAB60, DMKAB70, itd. -->
+                </select>
+            </div>
+
+            <!-- Step 3: wybór kolnierza IEC (tylko dla wybranych modeli) -->
+             <div class="menu" id="menu-flange" style="display: none;">
+                <label for="flangeSelect">Wybierz kołnierz IEC:</label>
+                <select id="flangeSelect" onchange="changeModel()">
+                    <!-- JS wypełni opcje: 63, 71, 80, 90, 100, 112, 132B5 -->
+                </select>
+             </div>
 
             <div class="menu" id="optionsContainer">
             <!-- dynamiczne opcje (kolnierz, IEC, wymiary, etc.)-->

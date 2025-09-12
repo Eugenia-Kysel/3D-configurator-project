@@ -1,8 +1,3 @@
-const viewer = document.getElementById('viewer');
-const gearTypeSelect = document.getElementById('gearType');
-const optionsContainer = document.getElementById('optionsContainer');
-
-
 /* Gear options library configuration */
 
 const gearOptions = {
@@ -101,6 +96,15 @@ const gearOptions = {
         }
     }
 };
+
+
+// --- Referencje do elementów ---
+const gearTypeSelect = document.getElementById('gearType');
+const modelSelect = document.getElementById('modelSelect');
+const gearFlangeSelect = document.getElementById('flangeSelect');
+const menuModel = document.getElementById('menu-model');
+const menuFlange = document.getElementById('menu-flange');
+const viewer = document.getElementById('viewer');
 
 
 // Inicjalizacja selecta głównego
