@@ -24,15 +24,71 @@
     --font-family: "Raleway", sans-serif;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Raleway', sans-serif;
+}
+
+body::-webkit-scrollbar {
+    width: 6px;                  /* szerokość paska */
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent;     /* tło paska */
+}
+
+
 body {
     margin: 0;
+    overflow: hidden; /* usuwa pasek przewijania */
     background: linear-gradient(180deg, var(--brand-primary), var(--brand-secondary));
-    color: var(--brand-tertiary);
+    color: var(--brand-secondary);
     font-family: var(--font-family);
 }
+
 
 header {
     text-align: center;
     padding: 15px;
     background: var(--brand-secondary);
+}
+
+main {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+}
+
+model-viewer {
+    flex: 1; /* <<< zajmuje całą wolną przestrzeń pod menu */
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+model-viewer::part(progress-bar) {
+    display: none;  /* ukrywa pasek ładowania */
+}
+
+model-viewer::part(progress-bar) {
+    background-color: rgba(255,255,255,0.3); /* półprzezroczysty */
+    height: 4px; /* cienki pasek */
+    top: 0;       /* pokazuje u góry zamiast domyślnie na dole */
+}
+
+.menu-container {
+  position: absolute; /* nakłada menu na model */
+  top: 30px;          /* odległość od góry */
+  left: 30px;         /* odległość od lewej */
+  display: flex;
+  gap: 25px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8); /* półprzezroczyste tło */
+  border-radius: 20px;
+  backdrop-filter: blur(6px);           /* efekt blur */
+  z-index: 10;                           /* zawsze nad viewerem */
 }

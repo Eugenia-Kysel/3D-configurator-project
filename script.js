@@ -107,79 +107,60 @@ const menuFlange = document.getElementById('menu-flange');
 const viewer = document.getElementById('viewer');
 
 
-// Inicjalizacja selecta głównego
-
-function initGearTypes() {
-    gearTypeSelect.innerHTML = "<option value=''> Wybierz typ przekładni </option>";
-    for (let key in gearOptions) {
-        let opt = document.createElement('option');
-        opt.value = key;
-        opt.textContent = models[key].name;
-        gearTypeSelect.appendChild(opt);
-    }
-}
-
-// Generowanie opcji dodatkowych (dynamiczne menu)
-
-function updateOptions( ) {
+// --- Funkcja wypełniająca modele po wyborze typu przekładni ---
+function updateOptions() {
     const type = gearTypeSelect.value;
-    optionsContainer.innerHTML = '';
+    menuModel.style.display = 'none';
+    menuFlange.style.display = 'none';
 
-    if (!type) {
-        viewer.src = '';
-        return;
-    }
-
-    const otts = models[type].options;
-    for (let optKey in otts) {
-        const optData = opts[optKey]
-
-        let label = document.createElement('label');
-        label.textContent = "Wybierz ${optData.label}: ";
-
-        let select = document.createElement('select');
-        select.id = optKey;
-
-        for (let choice in optData.choices) {
-            let option = document.createElement('option');
-            option.value = choice;
-            option.textContent = choice.toUpperCase();
-            select.appendChild(option);
+    if (type === "bevel") {
+        // wypełnij select modeli
+        modelSelect.innerHTML = "<option value=''>Wybierz model</option>";
+        const models = gearOptions[type].options.model.choices;
+        for ( let key in models) {
+            let opt = document.createElement('option');
+            opt.value = key;
+            opt.textContent = models[key].label;
+            modelSelect.appendChild(opt);
         }
-        
-        // Przy zmianie od razu zmiana modelu
-        select.addEventListener('change', changeModel);
-
-        optionsContainer.appendChild(label);
-        optionsContainer.appendChild(select);
-
-
+        menuModel.style.display = 'block';
     }
-
-    changeModel(); // Ustawienie domyślnego modelu
 }
 
 
-// Zmiana modelu w viewerze
-
-function changeModel() {
+// --- Funkcja wypełniająca kolnierze po wyborze modelu ---
+function updateFlangeOptions() {
     const type = gearTypeSelect.value;
-    if (!type) return;
+    const model = modelSelect.value;
+    menuFlange.style.display = "none";
 
-    const opts = models[type].options;
-    let selectedPath = "";
-
-    for (let optKey in opts) {
-        const select = document.getElementById(optKey);
-        if (select) {
-            selectedPath = opts[optKey].choices[select.value];
+    if (type === "bevel" && model) {
+        gearFlangeSelect.innerHTML = "<option value=''>Wybierz kołnierz</option>";
+        const flanges = gearOptions[type].options.model.choices[model].options.iec.choices;
+        for (let key in flanges) {
+            let opt = document.createElement('option');
+            opt.value = key;
+            opt.textContent = key;
+            gearFlangeSelect.appendChild(opt);
         }
+        menuFlange.style.display = 'block';
     }
-
-    viewer.src = selectedPath;
 }
 
-// Inicjalizacja
 
-gearTypeSelect.addEventListener('change', updateOptions);
-initGearTypes();
+// --- Funkcja ładująca model 3D po wyborze kołnierza ---
+function loadModel() {
+    const type = gearTypeSelect.value;
+    const model = modelSelect.value;
+    const flange = gearFlangeSelect.value;
+
+    let modelPath = "";
+
+    if (type === "bevel" && model && flange) {
+        modelPath = gearOptions[type].options.model.choices[model].options.iec.choices[flange];
+    } else if (type === "worm" && flange) {
+        modelPath = gearOptions[type].options.flange.choices[flange];
+    }
+
+    viewer.src = modelPath;
+}

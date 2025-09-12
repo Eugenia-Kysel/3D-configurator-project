@@ -19,7 +19,7 @@
 
             <!-- Step 1: wybór typu przekładni -->
             <div class="menu" id="menu-type">
-                <label for="gearType">>Wybierz typ przekładni:</label>
+                <label for="gearType">Wybierz typ przekładni:</label>
                 <select id="gearType" onchange="updateOptions()">
                     <option value="">Wybierz</option>
                     <option value="worm">Ślimakowa</option>
@@ -39,7 +39,7 @@
             <!-- Step 3: wybór kolnierza IEC (tylko dla wybranych modeli) -->
              <div class="menu" id="menu-flange" style="display: none;">
                 <label for="flangeSelect">Wybierz kołnierz IEC:</label>
-                <select id="flangeSelect" onchange="changeModel()">
+                <select id="flangeSelect" onchange="loadModel()">
                     <!-- JS wypełni opcje: 63, 71, 80, 90, 100, 112, 132B5 -->
                 </select>
              </div>
@@ -56,6 +56,9 @@
             exposure="0.5"
             shadow-intensity="1"
             style="width: 100%; height: 100vh;"
+            camera-orbit="0deg 75deg 135%"
+            min-camera-orbit="auto auto 110%"
+            max-camera-orbit="auto auto 200%" 
         ></model-viewer>
     </main>
 
