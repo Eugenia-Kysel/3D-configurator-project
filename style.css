@@ -11,11 +11,10 @@
     --conifer: #95d449;
     --lima: #78c51f;
     --fern-frond: #447c21;
-    --lima: #6bbc1c;
 
     --royal-heath: #94248c;
     --cod-black: #141414;
-    --cod-blac-kwarm: #0c0c0c;
+    --cod-black-warm: #0c0c0c;
     --plum: #942c94;
     --sambuca: #301c0c;
     --seaweed: #0c200c;
@@ -27,7 +26,6 @@
 
 body {
     margin: 0;
-    padding: 20px;
     background: linear-gradient(180deg, var(--brand-primary), var(--brand-secondary));
     color: var(--brand-tertiary);
     font-family: var(--font-family);
