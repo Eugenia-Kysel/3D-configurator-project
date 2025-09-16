@@ -50,11 +50,11 @@ body {
 }
 
 
-header {
+/*header {
     text-align: center;
     padding: 15px;
     background: var(--brand-secondary);
-}
+}*/
 
 main {
     margin: 0;
@@ -82,13 +82,14 @@ model-viewer::part(progress-bar) {
 
 .menu-container {
   position: absolute; /* nakłada menu na model */
-  top: 30px;          /* odległość od góry */
-  left: 30px;         /* odległość od lewej */
+  top: 35px;          /* odległość od góry */
+  left: 35px;         /* odległość od lewej */
   display: flex;
   gap: 25px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.8); /* półprzezroczyste tło */
-  border-radius: 20px;
+  padding: 40px;
+  background: var(--brand-primary);
+  border: 3px solid #040404; /* obramowanie */
+  border-radius: 60px;
   backdrop-filter: blur(6px);           /* efekt blur */
   z-index: 10;                           /* zawsze nad viewerem */
 }

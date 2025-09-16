@@ -1,6 +1,6 @@
 /* Gear options library configuration */
 
-const gearOptions = {
+const gearOptions = { // all options for gears - types, models, flanges - hierarchical structure
     worm: {
         name: "Ślimakowa",
         options: {
@@ -164,3 +164,27 @@ function loadModel() {
 
     viewer.src = modelPath;
 }
+
+// --- NOWA FUNKCJA RESETUJĄCA WYBORY ---
+/*const resetButton = document.getElementById("resetButton");
+
+resetButton.addEventListener("click", () => {
+     // Resetuj wszystkie selecty
+    gearTypeSelect.value = "";
+    modelSelect.innerHTML = "";
+    gearFlangeSelect.innerHTML = "";
+
+    // Ukryj menu modeli i kołnierzy
+    menuModel.style.display = "none";
+    menuFlange.style.display = "none";
+
+    // Wyczyść model 3D
+    viewer.src = "";
+
+    const placeholder = document.createElement(option);
+    placeholder.value = "";
+    placeholder.textContent = "Wybierz";
+    gearTypeSelect.prepend(placeholder);
+    gearTypeSelect.selectedIndex = 0;
+
+});*/

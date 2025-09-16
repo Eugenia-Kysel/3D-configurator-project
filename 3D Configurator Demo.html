@@ -19,7 +19,7 @@
 
             <!-- Step 1: wybór typu przekładni -->
             <div class="menu" id="menu-type">
-                <label for="gearType">Wybierz typ przekładni:</label>
+                <label for="gearType"><b>Wybierz typ przekładni:</b></label>
                 <select id="gearType" onchange="updateOptions()">
                     <option value="">Wybierz</option>
                     <option value="worm">Ślimakowa</option>
@@ -30,7 +30,7 @@
             
             <!-- Step 2: wybór modelu (tylko dla walcowo-stożkowych) -->
             <div class="menu" id="menu-model" style="display: none;">
-                <label for="modelSelect">Wybierz model:</label>
+                <label for="modelSelect"><b>Wybierz model:</b></label>
                 <select id="modelSelect" onchange="updateFlangeOptions()">
                     <!-- JS wypełni opcje: DMKAB60, DMKAB70, itd. -->
                 </select>
@@ -38,7 +38,7 @@
 
             <!-- Step 3: wybór kolnierza IEC (tylko dla wybranych modeli) -->
              <div class="menu" id="menu-flange" style="display: none;">
-                <label for="flangeSelect">Wybierz kołnierz IEC:</label>
+                <label for="flangeSelect"><b>Wybierz kołnierz IEC:</b></label>
                 <select id="flangeSelect" onchange="loadModel()">
                     <!-- JS wypełni opcje: 63, 71, 80, 90, 100, 112, 132B5 -->
                 </select>
@@ -46,7 +46,10 @@
 
             <div class="menu" id="optionsContainer">
             <!-- dynamiczne opcje (kolnierz, IEC, wymiary, etc.)-->
-            </div>   
+            </div>
+
+            <!-- NOWY PRZYCISK RESET -->
+            <!-- <button id="resetButton">Resetuj wybór</button> -->
         </div>
 
         <!-- 3D VIEWER -->
