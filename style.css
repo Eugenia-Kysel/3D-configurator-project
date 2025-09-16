@@ -89,7 +89,16 @@ model-viewer::part(progress-bar) {
   padding: 40px;
   background: var(--brand-primary);
   border: 3px solid #040404; /* obramowanie */
-  border-radius: 60px;
+  border-radius: 80px;
   backdrop-filter: blur(6px);           /* efekt blur */
   z-index: 10;                           /* zawsze nad viewerem */
+}
+
+select {
+    background: var(--brand-tertiary);
+    padding: 20px;
+    margin: 0 10px 0 0;
+    border-radius: 30px;
+    border: solid 2px var(--brand-secondary);
+    font-size: 16px;
 }
