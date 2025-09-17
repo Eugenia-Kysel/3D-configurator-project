@@ -29,10 +29,10 @@ const gearOptions = { // all options for gears - types, models, flanges - hierar
                                     "63B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/DMKAB60%2063B5.glb",
                                     "71B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/DMKAB60%2071B5.glb",
                                     "80B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/DMKAB60%2080B5.glb",
-                                    "90B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/DMKAB60%2090B5.glb",
-                                    "100B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/DMKAB60%20100B5.glb",
-                                    "112B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/DMKAB60%20112B5.glb",
-                                    "132B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/DMKAB60%20132B5.glb"
+                                    "90B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/3D-Configurator-Project/DMKAB60%2090B5.glb",
+                                    "100B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/3D-Configurator-Project/DMKAB60%20100B5.glb",
+                                    "112B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/3D-Configurator-Project/DMKAB60%20112B5.glb",
+                                    "132B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/3D-Configurator-Project/DMKAB60%20132B5.glb"
                                 }
                             }
                         }
@@ -62,15 +62,13 @@ const gearOptions = { // all options for gears - types, models, flanges - hierar
                                 label: "IEC",
                                 choices: {
                                     "80B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/DMKAB80%20IEC%2080B5.glb",
-                                    "90B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/DMKABB80%20IE%2090B5.glb",
-                                    "100B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/DMK90%20IEC100B5.glb",
-                                    "112B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/DMKAB80%20IEC%20112B5.glb",
-                                    "132B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/DMKAB80%20IEC%20132B5.glb",
-                                    "ZK86-100B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/ZK86-100B5.glb",
-                                    "ZK86-112B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/ZK86-112B5.glb",
-                                    "ZK86-132B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/ZK86-132B5.glb",
-                                    "ZK86-160B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/ZK86-160B5.glb",
-                                    "ZK86-180B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/ZK86-180B5.glb",
+                                    "90B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/3D-Configurator-Project/DMKAB%2080%20IEC90B5.glb",
+                                    "100B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/3D-Configurator-Project/DMK90%20IEC100B5.glb",
+                                    "112B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/3D-Configurator-Project/DMKAB80%20IEC%20112B5.glb",
+                                    "ZK86-100B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/3D-Configurator-Project/ZK86-100B5.glb",
+                                    "ZK86-132B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/3D-Configurator-Project/ZK86-132B5.glb",
+                                    "ZK86-160B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/3D-Configurator-Project/ZK86-160B5.glb",
+                                    "ZK86-180B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/3D-Configurator-Project/ZK86-180B5.glb",
                                 }
                             }
                         }
@@ -85,7 +83,7 @@ const gearOptions = { // all options for gears - types, models, flanges - hierar
                                     "100B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/DMK90%20IEC100B5.glb",
                                     "MKA97-112B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/MKA97-112B5.glb",
                                     "MKA97-132B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/MKA97-132B5.glb",
-                                    "MKA97-180B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/MKA97-180B5.glb",
+                                    "MKA97-180B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/3D-Configurator-Project/MKAB97-180B5.STEP.glb",
                                     "MKA97-200B5": "https://raw.githubusercontent.com/Eugenia-Kysel/3D-Models/main/MKA97-200B5.glb",
                                 }
                             }
