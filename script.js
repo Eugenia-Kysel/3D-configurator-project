@@ -163,6 +163,7 @@ function loadModel() {
     viewer.src = modelPath;
 }
 
+
 // --- NOWA FUNKCJA RESETUJĄCA WYBORY ---
 /*const resetButton = document.getElementById("resetButton");
 

@@ -100,13 +100,15 @@ model-viewer::part(progress-bar) {
   font-size: 18px;
   font-family: "Raleway", sans-serif;
   font-weight: 600;
+  z-index: 20;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* delikatny cień */
 }
 
 select {
     background: var(--brand-tertiary);
     padding: 20px;
     margin: 0 10px 0 0;
-    border-radius: 30px;
+    border-radius: 40px;
     border: solid 2px var(--brand-secondary);
     font-size: 18px;
     font-family: "Raleway", sans-serif;
@@ -128,24 +130,22 @@ select {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 4%;
+  min-height: 45px;
   background: linear-gradient(
     360deg,
-    rgba(198, 35, 171, 0.8), /* royal-heath with 70% opacity */
-    rgba(0, 0, 0, 0.1)      /* cod-black with 70% opacity */
+    rgba(198, 35, 171, 0.5),
+    rgba(0, 0, 0, 0.1)
   );
-  /*border: var(--brand-tertiary) 2px solid;*/
-  backdrop-filter: blur(6px); /* efekt blur */
+  backdrop-filter: blur(6px);
   color: var(--brand-tertiary);
-  text-align: left;
-  padding: 20px 10px;
-  z-index: 10; /* nad viewerem */
+  padding: 20px 40px;
+  z-index: 10;
 }
 
 .footer-content {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; /* linia pozioma */
   width: 100%;
 }
 
@@ -159,16 +159,41 @@ select {
   display: flex;
   align-items: center;
   gap: 5px; /* odstęp między ikonkami a tekstem */
+  top: 80px;
 }
 
 .contact-info p {
   margin: 20px 20px 0 5px; /* trochę miejsca po każdej danej */
 }
 
+.contact-info {
+  display: flex;
+  flex-direction: row; /* linia pozioma dla desktop */
+  gap: 20px;
+  align-items: center;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* odległość ikonki od tekstu */
+}
+
+.contact-item img {
+  width: 18px;
+  height: 18px;
+}
+
+.contact-item p {
+  margin: 0;
+  font-size: 16px;
+}
+
+
 /* Ikonki kontaktowe i social media */
 .social-icon {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   margin-top: 20px;
   vertical-align: middle;
 }
@@ -178,16 +203,126 @@ select {
   display: flex;
   gap: 30px; /* odstęp między ikonami */
   margin-left: auto; /* przesuwa całą sekcję maksymalnie w prawo */
-  margin-right: 50px;
+  margin-right: 100px;
 }
 
 .social-icons img {
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
   transition: transform 0.2s ease;
 }
 
 .social-icons img:hover {
   transform: scale(1.1);
+}
+
+/* --- MOBILE STYLES --- */
+@media (max-width: 768px) {
+
+  .menu-container {
+      transform: scale(0.6);         /* zmniejszenie całego menu */
+      transform-origin: top left;    /* punkt skalowania względem góry */
+      padding: 35px;                 /* zmniejszone paddingi */
+      gap: 15px;                     /* zmniejszony odstęp między elementami */
+      font-size: 18px;               /* zmniejszenie tekstu w menu */
+      left: 10px;                    /* bliżej lewej krawędzi */
+      top: 20px;                     /* bliżej górnej krawędzi */
+      flex-direction: column;        /* układ pionowy */
+      align-items: flex-start;       /* wyrównanie do lewej */
+  }
+
+  .menu-container label {
+      margin-right: 10px; /* odstęp między tekstem a selectem */
+  }
+
+  .menu-container select {
+      padding: 6px 10px;                 /* mniejsze paddingi w select */
+      font-size: 16px;                   /* mniejszy tekst w select */
+      margin: 2px 5px 0 0;               /* mniejszy margines po prawej */
+  }
+
+  /* opcjonalnie, żeby opcje też były mniejsze w niektórych przeglądarkach */
+  .menu-container select option {
+      font-size: 10px; /* mniejszy tekst w rozwijanym menu */
+      padding: 4px 6px; /* mniej miejsca w każdej opcji */
+}
+
+  .logo {
+      content: url('https://i.postimg.cc/n9XpzhcG/logodown.png');
+      width: 50px;
+      top: 37px;
+      right: 20px;
+  }
+
+  .footer {
+      display: flex;
+      flex-direction: row;        /* dwie kolumny obok siebie */
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+      padding : 5px 10px;      /* mniejsze paddingi */
+      height: auto;
+      box-sizing: border-box; /* uwzględnia padding w wysokości */
+  }
+    
+    
+  /* Kontakt: kolumna jedna pod drugą, kompaktowo */
+    .contact-info {
+      display: flex;
+      flex-direction: column;     /* dane kontaktowe w kolumnie */
+      gap: 2px;                  /* odstęp między numerem, mailem i adresem */
+      text-align: left;
+      margin: 0; /* mniejsze marginesy */
+      padding: 0;
+      bottom: 5px;
+      font-size: 10px;           /* mniejszy tekst */
+  }
+
+    .contact-item {
+      display: flex;
+      align-items: center;    /* ikonka i tekst w jednej linii */
+      gap: 2px;               /* odstęp między ikoną a tekstem */
+    }
+
+    .contact-item img {
+      width: 8px;             /* bardzo mała ikonka */
+      height: 8px;
+    }
+
+    .contact-item p {
+      font-size: 10px; /* mniejszy tekst */
+      margin: 0;
+   }
+
+  .contact-info p {
+    margin: 0;                  /* usuń dodatkowe marginesy */
+    text-align: left;
+  }
+
+  .social-icons {
+    display: flex;
+    flex-direction: column;     /* social media jedna pod drugą */
+    gap: 5px;
+    align-items: flex-end;      /* przy prawej krawędzi */
+  }
+
+  .social-icons img {
+    width: 15px;                /* dopasowane na telefon */
+    height: 15px;
+  }
+
+    /* Social media: kolumna po prawej */
+  .social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-end;
+    margin-right: auto; /* przesuwa całą sekcję maksymalnie w prawo */
+  }
+
+  .social-icons img {
+    width: 14px;
+    height: 14px;
+  }
 }
